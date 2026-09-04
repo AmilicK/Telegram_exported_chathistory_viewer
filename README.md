@@ -1,43 +1,57 @@
+<p align="right">
+  <a href="README.ru.md">🇷🇺 Русский</a> | 
+  <b>🇬🇧 English</b>
+</p>
+
 # TeleDump Viewer
 
-**TeleDump Viewer** — это легковесный десктопный просмотрщик экспортированной истории чатов Telegram (HTML-выгрузок), воссоздающий оригинальный внешний вид и пользовательский опыт официального клиента **Telegram Desktop**, но работающий полностью оффлайн.
+**TeleDump Viewer** is a lightweight desktop viewer for exported Telegram chat history (HTML exports). It recreates the authentic look, feel, and user experience of the official **Telegram Desktop** client, functioning entirely offline.
 
-Стандартные HTML-файлы экспорта Telegram открываются в браузере как статичные простыни текста без привычных функций мессенджера. **TeleDump Viewer** превращает локальную папку с выгрузками в полноценный интерактивный клиент: с тёмной темой, встроенным воспроизведением медиа, цитатами и умным поиском.
-
----
-
-## Ключевые возможности
-
-### 🎨 Аутентичный интерфейс Telegram Desktop
-* **Родная темная тема:** Цветовая палитра, шрифт, закругления бабблов сообщений и тени полностью подогнаны под оригинальный TDesktop.
-* **Свои и чужие сообщения:** Автоматическое разделение реплик на входящие (слева) и исходящие (справа) с сохранением галочек прочитанности.
-* **Компактная сетка:** Минимальные отступы между репликами и плотная привязка аватарок к началу блока сообщений собеседника.
-* **Цветные аватарки:** Генерация инициалов и фирменных градиентов Telegram для собеседников без фото профиля.
-
-### 🔊 Встроенный медиаплеер (Аудио и Видео)
-* **Интерактивные голосовые сообщения:** Декодирование `.ogg`-заметок с генерацией визуальной звуковой волны (waveform), таймером проигрывания и кнопкой паузы прямо в ленте.
-* **Поддержка видеосообщений (кружков):** Превращение файлов видеозаметок в интерактивные превью. Воспроизведение кружков в отдельном окне с зацикливанием.
-* **Нативный видеоплеер:** Запуск любых тяжелых видеороликов (`.mp4`, `.mov`, HEVC/H.264) через аппаратный движок Windows Media Foundation / FFmpeg с удобной панелью:
-  * Ползунок перемотки по таймлайну
-  * Индикатор времени и общей длительности
-  * Управление громкостью звука
-
-### 💬 Продвинутые ответы и цитаты
-* **Интерактивные реплаи:** Замена служебного текста *"In reply to this message"* на аккуратную карточку с именем автора, цветной вертикальной полосой и превью цитируемого текста или медиа.
-* **Быстрый переход и подсветка:** Клик по ответу плавно скроллит переписку к исходному сообщению, подсвечивая всю строку мягкой вспышкой с плавным затуханием.
-
-### 🧭 Навигация и фильтрация
-* **Поиск по чатам:** Быстрый фильтр списка диалогов в левой боковой панели.
-* **Поиск по тексту:** Мгновенный поиск ключевых слов внутри открытой переписки без перезагрузки страницы.
-* **Фильтр по дате:** Календарь для моментального перехода к сообщениям конкретного дня.
-* **Запоминание позиции (автоскролл):** Приложение раз в секунду фиксирует текущий прогресс чтения каждого чата и автоматически восстанавливает позицию скролла при повторном открытии.
+Default Telegram export HTML files open in browsers as flat, static text pages missing core messenger functionality. **TeleDump Viewer** transforms local export folders into a fully interactive client featuring dark theme styling, embedded media playback, native quotes/replies, and instant message search.
 
 ---
 
-## 🛠 Стек технологий
+## 🚀 Key Features
 
-* **Язык:** Python 3.10+
-* **GUI / Фреймворк:** PyQt6, PyQt6-WebEngine
-* **Медиа-движок:** PyQt6.QtMultimedia (аппаратное декодирование через FFmpeg / WMF)
-* **Парсинг:** BeautifulSoup4
-* **Рендеринг интерфейса:** HTML5 / CSS3 / JavaScript (инжекция динамических стилей и перехват событий на лету)
+### 🎨 Authentic Telegram Desktop Interface
+* **Native Dark Theme:** Colors, fonts, message bubble border-radii, and shadows are precisely matched to official TDesktop styles.
+* **Smart Alignment:** Incoming messages appear on the left, outgoing on the right, complete with double checkmark indicators.
+* **Compact Spacing:** Tight gaps between replies and proper avatar alignment next to conversation series.
+* **Dynamic Avatars:** Generates initials and official Telegram color gradients for users without profile pictures.
+
+### 🔊 Embedded Media Playback (Audio & Video)
+* **Interactive Voice Messages:** Decodes `.ogg` audio files directly within the feed, rendering audio waveforms, playback duration timers, and responsive play/pause buttons.
+* **Round Video Messages:** Identifies round video messages and displays authentic circular previews with native click-to-play support.
+* **Native Video Player Dialog:** Plays heavy `.mp4`, `.mov`, HEVC, and H.264 video files using the hardware-accelerated Windows Media Foundation / FFmpeg backend:
+  * Interactive seekbar / timeline scrubbing
+  * Playback position and total duration indicators
+  * Dedicated volume slider control
+
+### 💬 Interactive Replies & Quotes
+* **Native Reply Bubbles:** Replaces plain *"In reply to this message"* text with an authentic preview card showing author name, vertical accent bar, and quoted content (text or media type).
+* **Smooth Jump & Flash Highlight:** Clicking a reply smoothly scrolls directly to the target message, illuminating the entire row with a fading highlight effect.
+
+### 🧭 Navigation & History Management
+* **Global Chat Search:** Quickly filters dialogue lists in the left sidebar.
+* **In-Chat Keyword Search:** Instant, on-the-fly text searching across loaded conversations without full-page reloads.
+* **Date Filter:** Calendar picker to instantly jump to messages from specific dates.
+* **Auto-Scroll Position Memory:** Periodically saves reading progress for each chat and automatically restores the scroll position upon return.
+
+---
+
+## 🛠 Tech Stack
+
+* **Language:** Python 3.10+
+* **GUI Framework:** PyQt6, PyQt6-WebEngine
+* **Media Engine:** PyQt6.QtMultimedia (Hardware-accelerated via FFmpeg / Windows Media Foundation)
+* **Parsing:** BeautifulSoup4
+* **UI Engine:** HTML5 / CSS3 / JavaScript (Dynamic client-side DOM injection & style overrides)
+
+---
+
+## 📦 Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/AmilicK/Telegram_exported_chathistory_viewer.git](https://github.com/AmilicK/Telegram_exported_chathistory_viewer.git)
+   cd TeleDump-Viewer
